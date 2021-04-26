@@ -15,6 +15,8 @@
 		<br><br>
 		<div> 내용 : <textarea name="cntnt" rows="10" cols="10"></textarea></div>
 		<div> <input type="submit" value="글쓰기"> </div>
+		<!-- reset 시키는 법 -->
+		<div><input type="reset" value="초기화"></div>
 	</form>
 </body>
 </html>

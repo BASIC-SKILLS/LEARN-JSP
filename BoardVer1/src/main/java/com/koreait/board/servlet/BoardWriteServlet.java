@@ -24,6 +24,7 @@ public class BoardWriteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8"); //post방식 인코딩
 		
+		//getParameter - html로 부터 받은 정보
 		String title = request.getParameter("title");
 		String cntnt = request.getParameter("cntnt");
 		
@@ -34,9 +35,9 @@ public class BoardWriteServlet extends HttpServlet {
 		
 		DataBase.list.add(vo);
 		
-		request.setAttribute("dataList", DataBase.list);
-		
 		response.sendRedirect("/list"); //get방식으로 주소 이동 
 	}
+	
+	//get방식은 화면 이동 
 
 }

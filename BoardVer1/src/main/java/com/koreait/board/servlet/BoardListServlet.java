@@ -16,6 +16,7 @@ public class BoardListServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("dataList", DataBase.list);
+		//요청에는 사용자의 모든 정보가 담겨있다. 
 		
 		String jsp = "/WEB-INF/jsps/list.jsp";
 		
