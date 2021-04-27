@@ -12,6 +12,7 @@
 <title>Detail</title>
 </head>
 <body>
+	<h2>Detail</h2>
 	<div><%=request.getParameter("no") %>.</div>
 	<div>글 <%=no %>번의</div>
 	<div>제목 : <%=vo.getTitle() %></div>
@@ -22,6 +23,8 @@
 		<input type="hidden" name="no" value="<%=no%>">
 		<input type="submit" value="삭제">
 	</form>
+	
+	<a href="/mod?no=<%=no%>"><button>수정</button></a>
 	
 	<!-- get 
 	<a href = "/del?no=<%=no%>"> <button>삭제</button></a>

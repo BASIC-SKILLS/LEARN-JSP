@@ -35,10 +35,12 @@
 			BoardVo vo = list.get(i);
 			%>
 			<tr>
-				<td><%=i %></td>
+				
+				<td><a href="/detail?no=<%=i %>"><%=i %></a></td>
 				<!-- get방식으로 서버에 값 전달 할 때는 쿼리스트링 
 					 post방식으로 서버에 값 전달 할 때는 form태그-->
 				<td><a href="/detail?no=<%=i %>"><%=vo.getTitle() %></a></td>
+				
 			</tr>
 			<%} %>
 		</table>
