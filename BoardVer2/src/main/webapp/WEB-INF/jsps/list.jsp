@@ -19,7 +19,7 @@
 		<!-- EL식으로 i를 출력했다면 어딘가에 "i"라는 이름으로 setAttribute 되었다는 의미 -->
 		<!-- PageContext는 jsp가 실행될 때 만들어진다. -->
 		<!-- 즉, PageContext.setAttribute("i", value) 이렇게 되는 것이다. -->
-		<!-- value값에는 i의 값이 바뀔 때마다 기존의 값이 지워지고 새로우 값으로 변경된다. -->
+		<!-- value값에는 i의 값이 바뀔 때마다 기존의 값이 지워지고 새로운 값으로 변경된다. -->
 	</c:forEach>
 	
 	<br><br>
