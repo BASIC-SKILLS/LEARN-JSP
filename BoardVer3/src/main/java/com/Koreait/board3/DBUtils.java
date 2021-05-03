@@ -26,13 +26,13 @@ public class DBUtils {
 		//forName()과 getConnection()도 thorws가 있는 메소드라서 getCon()메소드에서 다 묶어서 throws하는 것이다. 
 		Class.forName(DRIVER);
 		Connection con = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
-		System.out.println("연결 성공!!");
+		System.out.println("Connection con = DBUtils.getCon() 연결 성공!!");
 		
 		return con;
 	}
 	
-	// con이 ps를 만들어주고 ps가 rs 만들어준다. 
-	//ps : CTR + SHITF + F9
+	//con이 ps를 만들어주고 ps가 rs 만들어준다. 
+	//ps : CTR + SHITF + F9 (쿼리문 완성(setString()메소드)과 쿼리문 실행(executeUpdate()메소드)을 담당한다.)
 	//rs : SELECT 결과로 생긴 테이블 그 자체가 들어간다. 
 	
 	public static void close(Connection con, PreparedStatement ps) { close(con, ps, null); }
