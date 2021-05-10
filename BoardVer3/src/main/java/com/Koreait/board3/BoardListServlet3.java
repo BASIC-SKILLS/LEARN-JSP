@@ -17,7 +17,8 @@ public class BoardListServlet3 extends HttpServlet {
 		List<BoardVo3> list = BoardDAO.selBoardList();
 		request.setAttribute("list", list);
 		
-		request.getRequestDispatcher("/WEB-INF/views/list3.jsp").forward(request, response);
+		//request.getRequestDispatcher("/WEB-INF/views/list3.jsp").forward(request, response);
+		MyUtils.openJSP("list3", request, response);
 	}
 
 }

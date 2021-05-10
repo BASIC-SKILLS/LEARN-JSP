@@ -10,6 +10,7 @@ public class DBUtils {
 	public static void main(String[] args) {
 		//method 옆에 throws가 있다면 꼭 try catch 구문을 이용해서 메소드를 이용해야 한다. 
 		try {
+			System.out.println("at DBUtils main() : ");
 			getCon();
 		} catch (Exception e) {
 			e.printStackTrace();
