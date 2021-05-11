@@ -4,3 +4,5 @@
 https://github.com/sbsteacher/2021BoardVer1.git
 
 https://github.com/sbsteacher/2021BoardVer4.git
+
+BoardVer4 중요~!
