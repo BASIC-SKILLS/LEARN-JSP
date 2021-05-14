@@ -1,10 +1,10 @@
-package com.koreait.board4;
+package com.koreait.board4.common;
 
 public class HisVo {
 	private String hisEmail;
 	private String hisName;
 	private String hisId;
-	private String hisGender;
+	private int hisGender;
 	private String hisPw;
 	
 	public String getHisEmail() {
@@ -25,10 +25,10 @@ public class HisVo {
 	public void setHisId(String hisId) {
 		this.hisId = hisId;
 	}
-	public String getHisGender() {
+	public int getHisGender() {
 		return hisGender;
 	}
-	public void setHisGender(String hisGender) {
+	public void setHisGender(int hisGender) {
 		this.hisGender = hisGender;
 	}
 	public String getHisPw() {

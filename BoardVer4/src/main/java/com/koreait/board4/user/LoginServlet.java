@@ -8,14 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.koreait.board4.MyUtils;
+import com.koreait.board4.common.MyUtils;
+
 
 @WebServlet("/user/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		UserVo loginUser = MyUtils.getLoginUser(request);
+		UserVo loginUser = com.koreait.board4.common.MyUtils.getLoginUser(request);
 		
 		if(loginUser != null) {
 			response.sendRedirect("/board/list");
@@ -70,7 +71,7 @@ public class LoginServlet extends HttpServlet {
 	public static void moveSearchLogin(int err, String errMsg, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (err>5) {
 			request.setAttribute("errMsg", errMsg);
-			MyUtils.openJSP("user/searchLogin", request, response);
+			MyUtils.openJSP("common/searchLogin", request, response);
 			return;
 		}
 	}

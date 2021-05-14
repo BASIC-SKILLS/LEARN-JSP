@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-import com.koreait.board4.DBUtils;
+import com.koreait.board4.common.DBUtils;
+
 
 public class UserDao {
 	public static void insUser(UserVo vo) {
@@ -195,6 +196,25 @@ public class UserDao {
 			con = DBUtils.getCon();
 			ps = con.prepareStatement(sql);
 			ps.setString(1, loginUser.getUser_Id());
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtils.close(con, ps);
+		}
+	}
+	
+	public static void updPw(UserVo loginUser) {
+		Connection con = null;
+		PreparedStatement ps = null;
+
+		String sql = " UPDATE t_user " + " SET user_Pw=?" + " WHERE iUser=? ";
+
+		try {
+			con = DBUtils.getCon();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, loginUser.getUser_Pw());
+			ps.setInt(2, loginUser.getiUser());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

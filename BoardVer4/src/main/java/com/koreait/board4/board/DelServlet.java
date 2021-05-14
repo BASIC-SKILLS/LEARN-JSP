@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.koreait.board4.MyUtils;
+import com.koreait.board4.common.MyUtils;
 import com.koreait.board4.user.UserVo;
 
 @WebServlet("/board/del")

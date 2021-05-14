@@ -13,7 +13,7 @@
 	
 	<div><a href="/user/login">로그인</a></div>
 	
-	<c:if test="${param.msg eq 'noId'}">
+	<c:if test="${param.msg eq 'noUser'}">
 		<div style="color:red">아마 회원가입 해야할 것 같죠~? ^^</div>
 	</c:if>
 	

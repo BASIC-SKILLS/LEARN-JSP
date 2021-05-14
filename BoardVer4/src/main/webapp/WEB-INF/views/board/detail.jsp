@@ -32,7 +32,7 @@
 <div><a href="list">게시판으로 가기</a></div>
 
 <script>
-	function searchLogin(iboard) {location.href='/user/searchLogin?err=checkPw&from=detail&iboard='+iboard;}
+	function searchLogin(iboard) {location.href='/searchLogin?err=checkPw&from=detail&iboard='+iboard;}
 	function moveModify() {location.href='mod?iboard='+${vo.iboard };}
 	function moveDel() {location.href='del?iboard='+${vo.iboard };}
 </script>

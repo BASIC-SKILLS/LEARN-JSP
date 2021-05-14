@@ -7,7 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.koreait.board4.MyUtils;
+import com.koreait.board4.common.MyUtils;
+
 
 @WebServlet("/user/userInfo")
 public class UserInfoServlet extends HttpServlet {

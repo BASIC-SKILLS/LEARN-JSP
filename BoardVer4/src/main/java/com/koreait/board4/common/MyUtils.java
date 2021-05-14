@@ -1,4 +1,4 @@
-package com.koreait.board4;
+package com.koreait.board4.common;
 
 import java.io.IOException;
 
@@ -56,5 +56,10 @@ public class MyUtils {
 	public static boolean confirmPws(String pwd, String newPwd) {
 		if (pwd.equals(newPwd)) return true;
 		return false;
+	}
+	
+	public static boolean isEmpty(String data) {
+		if (data == null || data.equals("")) return true;
+		else return false;
 	}
 }

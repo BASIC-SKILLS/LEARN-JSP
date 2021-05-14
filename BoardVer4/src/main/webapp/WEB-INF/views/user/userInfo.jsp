@@ -14,6 +14,9 @@
 </head>
 <body>
 	<h2>USER INFO</h2>
+	<c:if test="${param.msg eq 'noEmail'}">
+		<div style="color:red">새 이메일을 입력하지 않으셔서 비밀번호만 변경되었습니다.</div>
+	</c:if>
 	${loginUser.user_Name }(${loginUser.user_Id})님의 정보~!
 	<div>회원번호 <span class="content">♡ ${loginUser.iUser }</span></div>
 	<div>아이디 <span class="content">${loginUser.user_Id }</span></div>
@@ -44,7 +47,7 @@
 	<div><a href="/board/list">게시판으로 가기</a></div>
 	
 	<script>
-		function searchLogin(str, iboard) {location.href='/user/searchLogin?err='+str;}
+		function searchLogin(str, iboard) {location.href='/searchLogin?err='+str;}
 		function updateInfo() {location.href='updateInfo';}
 		function leaveEver() {
 			var confirmLeave;

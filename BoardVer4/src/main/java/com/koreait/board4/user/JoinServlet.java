@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-import com.koreait.board4.MyUtils;
+import com.koreait.board4.common.MyUtils;
+
 
 @WebServlet("/user/join")
 public class JoinServlet extends HttpServlet {
@@ -28,6 +29,16 @@ public class JoinServlet extends HttpServlet {
 		String user_Email = request.getParameter("user_Email");
 		String user_Pw = request.getParameter("user_Pw");
 		String confirmPw = request.getParameter("confirmPw");
+		
+		//항목 공백 확인
+		if (MyUtils.isEmpty(user_Id) || MyUtils.isEmpty(user_Name) 
+				|| MyUtils.isEmpty(user_Email) || MyUtils.isEmpty(user_Pw) ) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('어떤 항목이 비어있습니다. 모두 채우셔야 회원가입이 가능합니다.'); history.back();</script>");
+			out.close();
+			return;
+		}
 		
 		if (!MyUtils.confirmPws(user_Pw, confirmPw)) {
 			response.setContentType("text/html; charset=UTF-8");

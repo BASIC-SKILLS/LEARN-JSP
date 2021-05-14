@@ -1,4 +1,4 @@
-package com.koreait.board4.user;
+package com.koreait.board4.common;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,9 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.koreait.board4.MyUtils;
+import com.koreait.board4.user.UserDao;
+import com.koreait.board4.user.UserVo;
 
-@WebServlet("/user/checkPw")
+@WebServlet("/checkPw")
 public class CheckPwServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -25,7 +26,7 @@ public class CheckPwServlet extends HttpServlet {
 		
 		if (UserDao.checkPw(loginUser)) {
 			if (from.equals("userInfo")) {
-				response.sendRedirect("userInfo?err=done");
+				response.sendRedirect("/user/userInfo?err=done");
 				return;
 			}
 			if (from.equals("detail")) {
@@ -37,10 +38,10 @@ public class CheckPwServlet extends HttpServlet {
 		
 		errCount++;
 		if (errCount>5) {
-			response.sendRedirect("logout?errMsg=again");
+			response.sendRedirect("/user/logout?errMsg=again");
 			return;
 		}
-		response.sendRedirect("searchLogin?err=checkPw&from="+from+"&iboard="+iboard+"&errMsg=checkPw&errCount="+errCount);
+		response.sendRedirect("/searchLogin?err=checkPw&from="+from+"&iboard="+iboard+"&errMsg=checkPw&errCount="+errCount);
 	}
 
 }

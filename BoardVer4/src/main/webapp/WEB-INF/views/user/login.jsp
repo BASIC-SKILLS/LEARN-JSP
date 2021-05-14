@@ -48,7 +48,7 @@
 	</div>
 	
 	<script>
-		function searchLogin(str) {location.href='searchLogin?err'+str;}
+		function searchLogin(str) {location.href='/searchLogin?err'+str;}
 	</script>
 </body>
 </html>

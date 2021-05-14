@@ -1,4 +1,4 @@
-package com.koreait.board4;
+package com.koreait.board4.common;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
@@ -14,12 +14,13 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class MailSendID {
-	public void idMailSend(HisVo hisVo) {
+	public static void idMailSend(HisVo hisVo) {
 
 		Properties prop = System.getProperties();
 		
         // 로그인시 TLS를 사용할 것인지 설정
 		prop.put("mail.smtp.starttls.enable", "true");
+		
         
 		// 이메일 발송을 처리해줄 SMTP서버
 		prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -29,7 +30,12 @@ public class MailSendID {
         
 		// TLS의 포트번호는 587이며 SSL의 포트번호는 465이다.
 		prop.put("mail.smtp.port", "587");
-
+		
+		// soket문제와 protocol문제 해결
+		prop.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+		prop.put("mail.smtp.socketFactory.fallback", "false");
+		prop.put("mail.smtp.ssl.protocols", "TLSv1.2");
+		
 		Authenticator auth = new MailAuth();
 
 		Session session = Session.getDefaultInstance(prop, auth);
@@ -53,8 +59,12 @@ public class MailSendID {
 			// Message.RecipientType.BCC : 숨은 참조
 			msg.setRecipient(Message.RecipientType.TO, to);
 			
-			String mailSubject = hisVo.getHisName()+"("+hisVo.getHisGender()+")"+"님의 아이디를 알려드립니다.";
-			String mailText = "hisVo.getHisName()"+"("+"hisVo.getHisGender()"+")"+"님의 아이디는 ↓\n"
+			String gender="";
+			if (hisVo.getHisGender()==0) gender = "남";
+			else gender = "여";
+			
+			String mailSubject = hisVo.getHisName()+"("+gender+")"+"님의 아이디를 알려드립니다.";
+			String mailText = hisVo.getHisName()+"("+gender+")"+"님의 아이디는 ↓\n"
 					+hisVo.getHisId()+"\n↑ 이랍니다~^^";
 			
             // 메일의 제목 지정

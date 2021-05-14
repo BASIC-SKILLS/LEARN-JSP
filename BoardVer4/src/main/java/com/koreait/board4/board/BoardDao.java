@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.koreait.board4.DBUtils;
+import com.koreait.board4.common.DBUtils;
 import com.koreait.board4.user.UserDao;
 import com.koreait.board4.user.UserVo;
 

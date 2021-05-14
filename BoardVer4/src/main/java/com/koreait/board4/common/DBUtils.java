@@ -1,4 +1,4 @@
-package com.koreait.board4;
+package com.koreait.board4.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
