@@ -8,25 +8,10 @@
 <meta charset="UTF-8">
 <title>SEARCHLOGIN</title>
 
-<style>
-a {
-	color: purple;
-	text-decoration: none;
-}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link href="/res/css/forAll.css" rel="stylesheet">
+<script defer src="/res/js/forAll.js"></script>
 
-.record {
-	cursor: pointer;
-}
-
-.record:hover {
-	text-decoration: pink wavy underline;
-	text-underline-position: under;
-}
-
-.msg {
-	color: red
-}
-</style>
 </head>
 <body>
 	<h2>SEARCH LOGIN</h2>
@@ -47,9 +32,10 @@ a {
 					<div>
 						<input type="password" name="user_Pw" placeholder="비밀번호 입력">
 					</div>
-					<div>
-						<input type="submit" value="확인">
-					</div>
+					
+						<div><button type="submit">확인</button>
+						<button type="button" onclick="history.back()">취소</button></div>
+					
 				</form>
 			</c:when>
 			<c:when test="${param.err eq 'searchId'}">
@@ -57,7 +43,7 @@ a {
 				<h3>아이디 찾기</h3>
 
 				<c:if test="${param.msg eq 'smtEmpty' }">
-					<p style="color: red">
+					<p class="msg">
 						빈 항목이 하나라도 있으면 아이디를 찾을 수 없습니다. <br>
 						빈 항목이 있는 채로 5번 이상 아이디찾기를 시도하시면 <br>
 						회원가입창으로 자동 이동됩니다. <br>
@@ -66,7 +52,7 @@ a {
 				</c:if>
 				
 				<c:if test="${param.msg eq 'noId' }">
-					<p style="color: red">
+					<p class="msg">
 						입력하신 정보의 사용자가 없습니다. <br>
 						5번 이상 사용자가 없는 경우 <br>
 						회원가입창으로 자동 이동됩니다. <br>
@@ -86,9 +72,8 @@ a {
 					<div>
 						이메일 : <input type="text" name="user_Email">
 					</div>
-					<div>
-						<input type="submit" value="확인">
-					</div>
+					<div><button type="submit">확인</button>
+					<button type="button" onclick="moveBack()">취소</button></div>
 				</form>
 			</c:when>
 			<c:when test="${param.err eq 'searchPw' || param.errPw eq '5'}">
@@ -96,7 +81,7 @@ a {
 				<h3>비밀번호 찾기</h3>
 				
 				<c:if test="${param.msg eq 'smtEmpty' }">
-					<p style="color: red">
+					<p class="msg">
 						빈 항목이 하나라도 있으면 비밀번호를 찾을 수 없습니다. <br>
 						빈 항목이 있는 채로 5번 이상 비밀번호찾기를 시도하시면 <br>
 						회원가입창으로 자동 이동됩니다. <br>
@@ -105,7 +90,7 @@ a {
 				</c:if>
 				
 				<c:if test="${param.msg eq 'noPw' }">
-					<p style="color: red">
+					<p class="msg">
 						입력하신 정보의 사용자가 없습니다. <br>
 						5번 이상 사용자가 없는 경우 <br>
 						회원가입창으로 자동 이동됩니다. <br>
@@ -128,9 +113,8 @@ a {
 					<div>
 						이메일 : <input type="text" name="user_Email">
 					</div>
-					<div>
-						<input type="submit" value="확인">
-					</div>
+					<div><button type="submit">확인</button>
+					<button type="button" onclick="moveBack()">취소</button></div>
 				</form>
 		    </c:when>
 			<c:when test="${param.errId eq '5' || param.err eq '5'}">
@@ -142,9 +126,4 @@ a {
 	</p>
 </body>
 
-<script>
-	function moveJoin() {
-		location.href = '/user/join?msg=noUser';
-	}
-</script>
 </html>

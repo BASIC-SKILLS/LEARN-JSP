@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+
+html, body, input, textarea, button {font-family: 'Single Day', cursive;}
+
+
+
+body {line-height:2rem; padding:0; margin:1rem;}
+
+button {cursor: pointer; }
+button {color:purple; background-color:lavender; border: purple solid 0.25px; border-radius:0.25rem;} 
+button:hover{ text-decoration:purple wavy underline; text-underline-position: under; }
+
+input{
+	color:slateGray;
+	border: slateGray solid 0.25px; border-radius:0.25rem; padding:0.25rem;
+}
+
+a {color:purple; text-decoration:none; }
+.record { cursor: pointer; }
+.record:hover { text-decoration:pink wavy underline; text-underline-position: under; }
+
+.msg {
+	color: red
+}
+
+.content {
+	text-decoration: green wavy underline;
+	text-underline-position: under;
+}
+
+.star {
+	text-decoration: green wavy underline;
+	text-underline-position: under;
+	background-color: yellow;
+}
+
+.alam {color:paleVioletRed;}
+
+.itsU {
+	text-decoration: green wavy underline;
+	text-underline-position: under;
+	background-color:yellow
+	}
+	
+.noticeThis {
+	background-color:pink; color:slateGray; padding:1rem;
+}
+
+.swal-button 
+{
+	color:purple; 
+	background-color:lavender; 
+	border: purple solid 0.25px; 
+	border-radius:0.25rem;
+	padding:0.5rem;
+	
+}
+
+.swal-text {font-family: 'Single Day', cursive; }
+
+
+
+

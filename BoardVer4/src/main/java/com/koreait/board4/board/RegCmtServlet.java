@@ -1,4 +1,4 @@
-package com.koreait.board4.user;
+package com.koreait.board4.board;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,21 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.koreait.board4.common.MyUtils;
 
-
-@WebServlet("/user/leaveEver")
-public class LeaveEverServlet extends HttpServlet {
+@WebServlet("/board/regCmt")
+public class RegCmtServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		UserVo loginUser = MyUtils.getNewLoginUser(request);
-		if (!MyUtils.checkLogin(loginUser, request, response)) return;
-		
-		UserDao.LeaveUser(loginUser);
-		
-		response.sendRedirect("logout");
-	}
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	int iboard = MyUtils.getIntParam("iboard", request);
+	String cmt = request.getParameter("cmt");
+	
 	}
 
 }

@@ -23,8 +23,11 @@ public class BoardServlet extends HttpServlet {
 		List<BoardVo> list = BoardDao.selBoardList();
 		int listCount = BoardDao.selListCount();
 		
+		int yourArticleAtHere = loginUser.getListCount() - loginUser.getDelCount();
+		
 		request.setAttribute("list", list);
 		request.setAttribute("listCount", listCount);
+		request.setAttribute("yourArticleAtHere", yourArticleAtHere);
 		
 		// <setAttribute> loginUser, list, listCount
 		MyUtils.openJSP("board/list", request, response);

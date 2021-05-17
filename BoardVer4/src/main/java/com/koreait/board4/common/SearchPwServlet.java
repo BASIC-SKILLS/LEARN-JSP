@@ -26,7 +26,7 @@ public class SearchPwServlet extends HttpServlet {
 		if (MyUtils.isEmpty(user_Name) || MyUtils.isEmpty(user_Email) || MyUtils.isEmpty(user_Id)) {
 			emptyCount++;
 			if (emptyCount <= 5) {
-				response.sendRedirect("searchLogin?err=searchId&emptyCount=" + emptyCount + "&msg=smtEmpty");
+				response.sendRedirect("searchLogin?err=searchPw&emptyCount=" + emptyCount + "&msg=smtEmpty");
 				return;
 			}
 			if (emptyCount > 5) {
@@ -59,7 +59,7 @@ public class SearchPwServlet extends HttpServlet {
 		if (!checkHisVo4Pw) {
 			noPwCount++;
 			if (noPwCount <= 5) {
-				response.sendRedirect("searchLogin?err=searchPW&noPwCount=" + noPwCount + "&msg=noPw");
+				response.sendRedirect("/searchLogin?err=searchPw&noPwCount=" + noPwCount + "&msg=noPw");
 				return;
 			}
 			if (noPwCount > 5) {

@@ -6,22 +6,29 @@
 <head>
 <meta charset="UTF-8">
 <title>LIST</title>
-<style>
-	a {color:purple; text-decoration:none; }
-	.record { cursor: pointer; }
-	.record:hover { text-decoration:pink wavy underline; text-underline-position: under; }
-</style>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- defer : 외부 파일이 가장 늦게 읽혀짐 -->
+<!-- js와 css는 절대 경로로 적어야 한다. 
+브라우저가 이 문장을 읽고 "localhost:8090/절대 경로" 이렇게 접속해서
+js파일 또는 css파일을 다운 받아서 실행하기 때문이다. -->
+<!-- js와 css는 보안과 상관없고 브라우저가 경로로 찾아서 실행하는 것이기 때문에
+WEB-INF 밑으로 들어가면 안되고 WEBAPP 밑에 들어가야 한다. -->
+<script defer src="/res/js/forAll.js"></script>
+<!-- link href="" rel="stylesheet" 이 순서로 해야지 적용이 된다. -->
+<link href="/res/css/forAll.css" rel="stylesheet">
+
 </head>
 <body>
 	<h2>LIST</h2>
-	${loginUser.user_Name }(${loginUser.user_Id}) 등장~!!! <br>
+	<span  class="itsU">${loginUser.user_Name }(${loginUser.user_Id})</span>님 등장~!!! <br>
 	 오늘도 즐거운 하루 보내세요~! ^^ <br>
-	${loginUser.user_Name }님은 총 ${loginUser.listCount}개의 글을 쓰셨어요~! ^^ <br>
-	<c:if test="${loginUser.listCount eq 0}">
-		${loginUser.user_Name }님! 글 좀 쓰셔요~! ^^
+	여기엔 ${loginUser.user_Name }님의 글이 ${yourArticleAtHere}개있어요~! ^^ <br>
+	<c:if test="${yourArticleAtHere eq 0}">
+		<span class="alam">${loginUser.user_Name }님! 글 좀 쓰셔요~! ^^</span>
 	</c:if>
 	
-	<div><a href="/user/userInfo">[내 정보]</a></div>
+	<div><a href="/user/userInfo"><button>☆ 내 정보 ☆</button></a></div>
 
 
 	<!-- write는 예약어라서 write()라고 쓰면 절대 function으로 이동이 안된다. -->
@@ -48,11 +55,6 @@
 	</div>
 	<div style="color:grey">총 ${listCount }개의 글이 있습니다.</div>
 	<div><button onclick="moveLogout()">로그아웃</button></div>
-	<div><a href="/user/login">로그인 페이지로 갈 수 있으면 한번 가봐~^^</a></div>
+	<div><a href="/user/login"><button>로그인 페이지로 갈 수 있으면 한번 가봐~^^</button></a></div>
 </body>
-<script>
-	function moveWrite() {location.href='write';}
-	function moveLogout() {location.href='/user/logout';}
-	function moveDetail(iboard) {location.href='detail?iboard='+iboard;}
-</script>
 </html>

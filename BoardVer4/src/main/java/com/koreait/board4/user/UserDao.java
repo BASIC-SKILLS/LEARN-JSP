@@ -37,7 +37,7 @@ public class UserDao {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
-		String sql = " SELECT user_Pw, iUser, user_Name " + " FROM  t_user " + " WHERE user_Id=? ";
+		String sql = " SELECT user_Pw, iUser, user_Name " + " FROM  t_user " + " WHERE user_Id=? AND delFL=0 ";
 
 		try {
 			con = DBUtils.getCon();
@@ -71,7 +71,7 @@ public class UserDao {
 		ResultSet rs = null;
 
 		String sql = " SELECT iUser, user_Id, user_Pw, user_Name, gender, regdt, user_Email, listCount, delCount, modCount "
-				+ " FROM  t_user " + " WHERE iUser=? ";
+				+ " FROM  t_user " + " WHERE iUser=? AND delFl=0";
 
 		try {
 			con = DBUtils.getCon();
@@ -103,7 +103,7 @@ public class UserDao {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		String sql = " UPDATE t_user " + " SET listCount=? " + " WHERE iUser=? ";
+		String sql = " UPDATE t_user " + " SET listCount=? " + " WHERE iUser=? AND delFl=0";
 
 		try {
 			con = DBUtils.getCon();
@@ -123,7 +123,7 @@ public class UserDao {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		String sql = " UPDATE t_user " + " SET delCount=? " + " WHERE iUser=? ";
+		String sql = " UPDATE t_user " + " SET delCount=? " + " WHERE iUser=? AND delFl=0";
 
 		try {
 			con = DBUtils.getCon();
@@ -143,7 +143,7 @@ public class UserDao {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		String sql = " UPDATE t_user " + " SET modCount=? " + " WHERE iUser=? ";
+		String sql = " UPDATE t_user " + " SET modCount=? " + " WHERE iUser=? AND delFl=0";
 
 		try {
 			con = DBUtils.getCon();
@@ -164,7 +164,7 @@ public class UserDao {
 		ResultSet rs = null;
 		boolean result = false;
 
-		String sql = " SELECT user_Pw " + " FROM  t_user " + " WHERE iUser=? ";
+		String sql = " SELECT user_Pw " + " FROM  t_user " + " WHERE iUser=? AND delFl=0";
 
 		try {
 			con = DBUtils.getCon();
@@ -185,17 +185,16 @@ public class UserDao {
 		return result;
 	}
 	
-	public static void delUser(UserVo loginUser) {
+	public static void LeaveUser(UserVo loginUser) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		
-		String sql = " DELETE FROM t_user "
-				+ " WHERE user_Id=? ";
+		String sql = " UPDATE t_user " + " SET delFl=1 " + " WHERE iUser=? AND delFl=0";
 		
 		try {
 			con = DBUtils.getCon();
 			ps = con.prepareStatement(sql);
-			ps.setString(1, loginUser.getUser_Id());
+			ps.setInt(1, loginUser.getiUser());
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -208,7 +207,7 @@ public class UserDao {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		String sql = " UPDATE t_user " + " SET user_Pw=?" + " WHERE iUser=? ";
+		String sql = " UPDATE t_user " + " SET user_Pw=?" + " WHERE iUser=? AND delFl=0";
 
 		try {
 			con = DBUtils.getCon();
@@ -227,7 +226,7 @@ public class UserDao {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		String sql = " UPDATE t_user " + " SET user_Email=?" + " WHERE iUser=? ";
+		String sql = " UPDATE t_user " + " SET user_Email=?" + " WHERE iUser=? AND delFl=0";
 
 		try {
 			con = DBUtils.getCon();
@@ -246,7 +245,7 @@ public class UserDao {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		String sql = " UPDATE t_user " + " SET user_Email=?, user_Pw=? " + " WHERE iUser=? ";
+		String sql = " UPDATE t_user " + " SET user_Email=?, user_Pw=? " + " WHERE iUser=? AND delFl=0";
 
 		try {
 			con = DBUtils.getCon();

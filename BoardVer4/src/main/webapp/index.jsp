@@ -6,11 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>HOME</title>
-<style>
-	a {text-decoration:pink wavy underline;}
-</style>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link href="/res/css/forAll.css" rel="stylesheet">
+<script defer src="/res/js/forAll.js"></script>
+
 </head>
 <body>
-	<div><a href="/user/login">로그인</a></div>
+	<div><a href="/user/login"><button>로그인</button></a></div>
 </body>
 </html>

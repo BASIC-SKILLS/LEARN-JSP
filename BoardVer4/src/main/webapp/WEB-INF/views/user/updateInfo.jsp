@@ -7,24 +7,10 @@
 <meta charset="UTF-8">
 <title>UPDATEINFO</title>
 
-<style>
-body {
-	line-height: 2rem;
-}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link href="/res/css/forAll.css" rel="stylesheet">
+<script defer src="/res/js/forAll.js"></script>
 
-.content {
-	text-decoration: green wavy underline;
-	text-underline-position: under;
-	padding: 1rem;
-}
-
-.star {
-	text-decoration: green wavy underline;
-	text-underline-position: under;
-	background-color: black;
-	color: yellow;
-}
-</style>
 </head>
 <body>
 	<h2>UPDATE INFO</h2>
@@ -80,15 +66,9 @@ body {
 			<span class="content">♡ ${loginUser.modCount }</span>번 글을 수정했어요~^^
 		</div>
 		<div>
-			<input type="submit" value="내 정보 수정"><input type="button"
-				value="취소" onclick="moveBack()">
+			<button type="submit">내 정보 수정</button><button type="button" onclick="moveBack()">취소</button>
 		</div>
 	</form>
 
-	<script>
-		function moveBack() {
-			history.back();
-		}
-	</script>
 </body>
 </html>
