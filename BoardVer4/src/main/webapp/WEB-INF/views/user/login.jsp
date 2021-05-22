@@ -37,15 +37,14 @@
 	
 	<div>
 		<form action="/user/login?err=${param.err }&errId=${param.errId }&errPw=${param.errPw }" method="post">
-			<div><input type="text" name="user_Id" placeholder="아이디"></div>
-			<div><input type="password" name="user_Pw" placeholder="비밀번호"></div>
+			<div><input type="text" name="user_Id" placeholder="아이디" ></div>
+			<div><input type="password" name="user_Pw" placeholder="비밀번호" ></div>
 			<div><button type="submit">로그인</button></div>
 		</form>
 		
 		<div><a href="join"><button>회원가입</button></a></div>
 		<button onclick="searchLogin('searchId')">아이디 찾기</button>
 		<button onclick="searchLogin('searchPw')">비밀번호 찾기</button>
-		<div><a href="/board/list"><button>게시판 페이지로 갈 수 있으면 한번 가봐~^^</button></a></div>
 	</div>
 	
 </body>

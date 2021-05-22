@@ -30,7 +30,7 @@
 					action="/checkPw?from=${param.from }&iboard=${param.iboard}&errCount=${param.errCount}"
 					method="post">
 					<div>
-						<input type="password" name="user_Pw" placeholder="비밀번호 입력">
+						<input type="password" name="user_Pw" placeholder="비밀번호 입력" >
 					</div>
 					
 						<div><button type="submit">확인</button>
@@ -100,10 +100,10 @@
 
 				<form action="/searchPw?emptyCount=${param.emptyCount }&noPwCount=${param.noPwCount }" method="post">
 					<div>
-						아이디 : <input type="text" name="user_Id">
+						아이디 : <input type="text" name="user_Id" >
 					</div>
 					<div>
-						이름 : <input type="text" name="user_Name">
+						이름 : <input type="text" name="user_Name" >
 					</div>
 					<div>
 						성별 : <label>남성<input type="radio" name="gender" value="0"
@@ -111,7 +111,7 @@
 							name="gender" value="1"></label>
 					</div>
 					<div>
-						이메일 : <input type="text" name="user_Email">
+						이메일 : <input type="text" name="user_Email" >
 					</div>
 					<div><button type="submit">확인</button>
 					<button type="button" onclick="moveBack()">취소</button></div>

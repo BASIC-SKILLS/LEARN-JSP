@@ -46,11 +46,11 @@
 		</div>
 		<div>
 			<span class="star">★ 새로운 이메일</span> <input type="email"
-				name="user_Email">
+				name="user_Email" >
 		</div>
 		<div>
 			<span class="star">★ 새로운 비밀번호</span> <input type="password"
-				name="user_Pw">
+				name="user_Pw" >
 		</div>
 		<div>
 			<span class="star">★ 비밀번호 확인</span> <input type="password"

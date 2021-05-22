@@ -17,9 +17,12 @@ input{
 	border: slateGray solid 0.25px; border-radius:0.25rem; padding:0.25rem;
 }
 
+
+
 a {color:purple; text-decoration:none; }
+
 .record { cursor: pointer; }
-.record:hover { text-decoration:pink wavy underline; text-underline-position: under; }
+.record:hover { text-decoration:pink wavy underline; text-underline-position: under;}
 
 .msg {
 	color: red
@@ -44,10 +47,6 @@ a {color:purple; text-decoration:none; }
 	background-color:yellow
 	}
 	
-.noticeThis {
-	background-color:pink; color:slateGray; padding:1rem;
-}
-
 .swal-button 
 {
 	color:purple; 
@@ -61,5 +60,14 @@ a {color:purple; text-decoration:none; }
 .swal-text {font-family: 'Single Day', cursive; }
 
 
+/*안 먹힘*/
+input:focus {outline: none;}
+input:focus {color:black; border: purple solid 0.25px; border-radius:0.25rem;}
 
+textarea {
+	color:slateGray;
+	border: slateGray solid 0.25px; border-radius:0.25rem; 
+}
+textarea:focus {outline: none;}
+textarea:focus {color:black; border: purple solid 0.25px; border-radius:0.25rem;}
 

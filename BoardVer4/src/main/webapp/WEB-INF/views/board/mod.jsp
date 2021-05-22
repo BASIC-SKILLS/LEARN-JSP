@@ -20,7 +20,7 @@
 	<div class="content">♡ ${vo.iboard }.</div>
 	
 	<form action="mod?iboard=${vo.iboard }" method="post">
-		제목<div><input type="text" name="title" value="${vo.title }"></div>
+		제목<div><input type="text" name="title" value="${vo.title }" ></div>
 		내용 <textarea name="ctnt">${vo.ctnt}</textarea>
 		<div><button type="submit">글 수정</button></div>
 		<div><button type="reset">리셋</button></div>

@@ -18,7 +18,7 @@
 	지금 쓰는 글은 ${loginUser.listCount + 1}번째 글이랍니다~ ^^
 	
 	<form action="write" method="post">
-		<div><input type="text" name="title" placeholder="제목"></div>
+		<div><input type="text" name="title" placeholder="제목" ></div>
 		<textarea name="ctnt" placeholder="내용"></textarea>
 		<div><button type="submit">글 등록</button></div>
 		<div><button type="reset">리셋</button></div>

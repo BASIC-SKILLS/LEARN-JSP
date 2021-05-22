@@ -55,6 +55,5 @@ WEB-INF 밑으로 들어가면 안되고 WEBAPP 밑에 들어가야 한다. -->
 	</div>
 	<div style="color:grey">총 ${listCount }개의 글이 있습니다.</div>
 	<div><button onclick="moveLogout()">로그아웃</button></div>
-	<div><a href="/user/login"><button>로그인 페이지로 갈 수 있으면 한번 가봐~^^</button></a></div>
 </body>
 </html>

@@ -70,7 +70,7 @@ public class UserDao {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
-		String sql = " SELECT iUser, user_Id, user_Pw, user_Name, gender, regdt, user_Email, listCount, delCount, modCount "
+		String sql = " SELECT iUser, user_Id, user_Name, gender, regdt, user_Email, listCount, delCount, modCount "
 				+ " FROM  t_user " + " WHERE iUser=? AND delFl=0";
 
 		try {
@@ -81,7 +81,6 @@ public class UserDao {
 			if (rs.next()) {
 				loginUser.setiUser(rs.getInt("iUser"));
 				loginUser.setUser_Id(rs.getString("user_Id"));
-				loginUser.setUser_Pw(rs.getString("user_Pw"));
 				loginUser.setUser_Name(rs.getString("user_Name"));
 				loginUser.setGender(rs.getInt("gender"));
 				loginUser.setRegdt(rs.getString("regdt"));
@@ -97,6 +96,7 @@ public class UserDao {
 		}
 		return loginUser;
 	}
+	
 
 	// BoardDao.insArticle()에서만 쓰인다.
 	public static void updYourListCount(UserVo loginUser) {
@@ -261,54 +261,49 @@ public class UserDao {
 		}
 	}
 	
-	public static boolean confirmId(UserVo loginUser) {
+	public static boolean confirmId(UserVo vo) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
-		String sql = " SELECT user_Id " + " FROM  t_user ";
+		String sql = " SELECT count(*) " + " FROM  t_user " + " WHERE user_Id=? AND delFl=0";
 
 		try {
 			con = DBUtils.getCon();
 			ps = con.prepareStatement(sql);
+			ps.setString(1, vo.getUser_Id());
 			rs = ps.executeQuery();
-			while (rs.next()) {
-				if (loginUser.getUser_Id().equals(rs.getString("user_Id"))) {
-					return false;
-				}
-			}
+			int result = rs.getInt(1);
+			if (result>0) return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBUtils.close(con, ps, rs);
 		}
-		return true;
+		return false;
 	}
 	
 	
 	
-	public static boolean confirmEmail(UserVo loginUser) {
+	public static boolean confirmEmail(UserVo vo) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
-		String sql = " SELECT user_Email " + " FROM  t_user ";
+		String sql = " SELECT count(*) " + " FROM  t_user " + " user_Email=? AND delFl=0";
 
 		try {
 			con = DBUtils.getCon();
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
-			while (rs.next()) {
-				if (loginUser.getUser_Email().equals(rs.getString("user_Email"))) {
-					return false;
-				}
-			}
+			int result = rs.getInt(1);
+			if (result>0) return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBUtils.close(con, ps, rs);
 		}
-		return true;
+		return false;
 	}
 	
 }
