@@ -11,7 +11,7 @@ BoardVer4 중요~!
 
 
 **새로 배운 것들**
-
+```
 - template 하는 법
 - <nav>태그
 - <jsp:include page="/WEB-INF/views/${page }.jsp"></jsp:include>
@@ -69,3 +69,4 @@ BoardVer4 중요~!
         
 - java ajax response -> append를 쓰자 
         PrintWriter out = response.getWriter(); out.append("<h1>안녕하세요</h1>").append("<h1>반갑습니다</h1>").append("<h1>그렇습니다</h1>");
+```
