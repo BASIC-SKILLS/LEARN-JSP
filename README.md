@@ -12,6 +12,7 @@ BoardVer4 중요~!
 
 **새로 배운 것들**
 ```
+- sweetalert
 - template 하는 법
 - <nav>태그
 - <jsp:include page="/WEB-INF/views/${page }.jsp"></jsp:include>
