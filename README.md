@@ -1,6 +1,9 @@
 # 5months_JSP
 
-<span style="background-color:violet">**내가 새로 구현한 기능 `EMAIL` `$.AJAX` `실시간 회원가입 유효성 체크` `alert, confirm창 SWEETALEART 라이브러리 사용`**</span>
+
+🌟 <mark style='background-color: pink'>**내가 새로 구현한 기능 `EMAIL` `$.AJAX` `실시간 회원가입 유효성 체크` `alert, confirm창 SWEETALEART 라이브러리 사용`**</mark>
+
+---
 
 국기선생님
 
@@ -13,6 +16,7 @@ https://github.com/sbsteacher/2021BoardVer7.git
 
 BoardVer4 && 7중요~!
 
+---
 
 **새로 배운 것들**
 ```
