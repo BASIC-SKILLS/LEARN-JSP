@@ -74,4 +74,12 @@ BoardVer4 && 7중요~!
         
 - java ajax response -> append를 쓰자 
         PrintWriter out = response.getWriter(); out.append("<h1>안녕하세요</h1>").append("<h1>반갑습니다</h1>").append("<h1>그렇습니다</h1>");
+	
+- 객체를 매개변수로 보냈을 때,
+  그 객체를 매개변수로 받을 때, 그 객체의 멤버 필드로 받을 수 있다.
+  
+  어디서 보냈지..?
+  매개변수 item 객체를 받는 데, 그 객체의 멤버필드를 빼서 받을 수 있다.
+  {객체의 매개변수1, 객체의 매개변수2}
+  function openModModal({icmt, cmt}) { }
 ```
