@@ -79,7 +79,10 @@ BoardVer4 && 7중요~!
   그 객체를 매개변수로 받을 때, 그 객체의 멤버 필드로 받을 수 있다. {객체의 매개변수1, 객체의 매개변수2}
   
   modBtn.addEventListener('click', function() { openModModal(item); });
-  function openModModal({icmt, cmt}) { }	
+  function openModModal({icmt, cmt}) { 
+  	console.log(icmt);
+	console.log(cmt);
+  }	
   
   매개변수 item 객체를 받는 데, 그 객체의 멤버필드를 빼서 받을 수 있다.
   {객체의 매개변수1, 객체의 매개변수2}
