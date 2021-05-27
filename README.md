@@ -1,6 +1,6 @@
 # 5months_JSP
-BoardVer4는 이메일 보내기와 AJAX기능이 적용되었다.
-BoardVer4는 $.AJAX를 학습하여서 적용시켰다. 
+
+**내가 새로 구현한 기능 `EMAIL` `$.AJAX` `실시간 회원가입 유효성 체크` `alert, confirm창 SWEETALEART 라이브러리 사용`**
 
 국기선생님
 
