@@ -1,6 +1,6 @@
 # 5months_JSP
 
-**내가 새로 구현한 기능 `EMAIL` `$.AJAX` `실시간 회원가입 유효성 체크` `alert, confirm창 SWEETALEART 라이브러리 사용`**
+<span style="background-color:violet">**내가 새로 구현한 기능 `EMAIL` `$.AJAX` `실시간 회원가입 유효성 체크` `alert, confirm창 SWEETALEART 라이브러리 사용`**</span>
 
 국기선생님
 
